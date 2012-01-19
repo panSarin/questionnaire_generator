@@ -1,0 +1,96 @@
+
+
+Started GET "/admin/admin_users" for 127.0.0.1 at Thu Jan 19 16:19:34 +0100 2012
+
+ActionController::RoutingError (No route matches [GET] "/admin/admin_users"):
+  
+
+Rendered /home/sarin/.rvm/gems/ree-1.8.7-2011.03/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (24.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 19 16:19:37 +0100 2012
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered /home/sarin/.rvm/gems/ree-1.8.7-2011.03/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.3ms)
+
+
+Started GET "/questionnaire_generator" for 127.0.0.1 at Thu Jan 19 16:19:51 +0100 2012
+
+ActionController::RoutingError (No route matches [GET] "/questionnaire_generator"):
+  
+
+Rendered /home/sarin/.rvm/gems/ree-1.8.7-2011.03/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/questionnaire_generator" for 127.0.0.1 at Thu Jan 19 16:20:42 +0100 2012
+
+ActionController::RoutingError (uninitialized constant QuestionnaireGenerator::QuestionnairesController):
+  
+
+Rendered /home/sarin/.rvm/gems/ree-1.8.7-2011.03/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (143.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (81.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateQuestionnaireGeneratorQuestionnaires (20120113200430)
+  [1m[35m (0.4ms)[0m  CREATE TABLE "questionnaire_generator_questionnaires" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120113200430')[0m
+Migrating to CreateQuestionnaireGeneratorQuestions (20120113200723)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "questionnaire_generator_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120113200723')[0m
+Migrating to CreateQuestionnaireGeneratorQuestionOptions (20120113200735)
+  [1m[35m (0.4ms)[0m  CREATE TABLE "questionnaire_generator_question_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120113200735')[0m
+Migrating to CreateQuestionnaireGeneratorAnswers (20120113200750)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "questionnaire_generator_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120113200750')[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("questionnaire_generator_answers")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("questionnaire_generator_question_options")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("questionnaire_generator_questionnaires")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("questionnaire_generator_questions")[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateQuestionnaireGeneratorAnswers (20120113200750)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "questionnaire_generator_answers"
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20120113200750'[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("questionnaire_generator_question_options")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("questionnaire_generator_questionnaires")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("questionnaire_generator_questions")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateQuestionnaireGeneratorQuestionOptions (20120113200735)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "questionnaire_generator_question_options"
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20120113200735'[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("questionnaire_generator_questionnaires")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("questionnaire_generator_questions")[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateQuestionnaireGeneratorQuestions (20120113200723)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "questionnaire_generator_questions"
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20120113200723'[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("questionnaire_generator_questionnaires")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateQuestionnaireGeneratorQuestionnaires (20120113200430)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "questionnaire_generator_questionnaires"
+  [1m[36m (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20120113200430'[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m

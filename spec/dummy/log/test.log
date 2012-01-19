@@ -1,0 +1,23 @@
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (135.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (79.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateQuestionnaireGeneratorQuestionnaires (20120113200430)
+  [1m[35m (0.9ms)[0m  CREATE TABLE "questionnaire_generator_questionnaires" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120113200430')[0m
+Migrating to CreateQuestionnaireGeneratorQuestions (20120113200723)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "questionnaire_generator_questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "questionnaire_id" integer, "content" varchar(255), "position" varchar(255), "optional" boolean DEFAULT 't', "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120113200723')[0m
+Migrating to CreateQuestionnaireGeneratorQuestionOptions (20120113200735)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "questionnaire_generator_question_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "query" varchar(255), "field_type" varchar(255), "question_id" integer, "rows" integer, "validations" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120113200735')[0m
+Migrating to CreateQuestionnaireGeneratorAnswers (20120113200750)
+  [1m[35m (0.3ms)[0m  CREATE TABLE "questionnaire_generator_answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_option_id" integer, "value" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120113200750')[0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("questionnaire_generator_answers")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("questionnaire_generator_question_options")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("questionnaire_generator_questionnaires")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("questionnaire_generator_questions")[0m
