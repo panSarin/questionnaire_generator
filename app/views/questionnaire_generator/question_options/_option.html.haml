@@ -1,0 +1,23 @@
+- if option.field_type == "text"
+  %li
+    - unless option.text.blank?
+      = label_tag "#{option.question_id}_#{option.id}", t("questions.#{option.question_id}.#{option.text}")
+    = text_field_tag "#{option.question_id}_#{option.id}", questionnaire_input_value(option) ,  :id => "#{option.question_id}_#{option.id}", "data-validation" => option.validation
+    %span{:style => "display: none", :class => "validation_error"}= t("validation_errors.#{option.validation}")
+- elsif option.field_type == "radio"
+  %li
+    = radio_button_tag "#{option.question_id}[]", option.id, questionnaire_radio_checked?(option), :id => "#{option.question_id}_#{option.id}"
+    %span= t("questions.#{option.question_id}.#{option.text}")
+- elsif option.field_type == "checkbox"
+  %li
+    = check_box_tag "#{option.question_id}[]", option.id, questionnaire_checkbox_checked?(option), :id => "#{option.question_id}_#{option.id}"
+    %span= t("questions.#{option.question_id}.#{option.text}")
+- elsif option.field_type == "textarea"
+  %li
+    - unless option.text.blank?
+      = label_tag "#{option.question_id}_#{option.id}", t("questions.#{option.question_id}.#{option.text}")
+    = text_area_tag "#{option.question_id}_#{option.id}", questionnaire_input_value(option) ,  :id => "#{option.question_id}_#{option.id}", :rows => option.rows
+- elsif option.field_type == 'lang_list'
+  %li
+    = #multiple_languages_select(option)
+

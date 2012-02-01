@@ -1,7 +1,8 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-
+require "haml"
+require 'jquery-rails'
 Bundler.require
 require "questionnaire_generator"
 

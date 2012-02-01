@@ -1,5 +1,6 @@
 QuestionnaireGenerator::Engine.routes.draw do
-  get "questionnaires/index"
-
   root :to => "questionnaires#index" 
+  resources :questionnaires do
+    resources :questions
+  end
 end

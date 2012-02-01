@@ -21,4 +21,12 @@ describe QuestionnaireGenerator::Question do
     question = FactoryGirl.create(:question)
     question.optional.should == true
   end
+
+  it "should have many question options" do
+    question = FactoryGirl.create(:question)
+    question_option1 = FactoryGirl.create(:question_option, question: question)
+    question_option2 = FactoryGirl.create(:question_option, question: question)
+    question.question_options.should include(question_option1)
+    question.question_options.should include(question_option2)
+  end
 end

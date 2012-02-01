@@ -1,3 +1,24 @@
 = QuestionnaireGenerator
 
 This project rocks and uses MIT-LICENSE.
+
+You should add 
+  mount QuestionnaireGenerator::Engine => "/questionnaire_generator"
+in your routes.rb
+
+
+After you install QuestionnaireGenerator you should run
+rake questionnaire_generator:install:migrations
+and then run
+rake db:migrate
+
+If you want to have some example data in your db use seeds.rb by #TODO rake questionnaire_generator:seed ?
+
+
+If you want to display your questionnaires list you should go to
+questionnaires_path.
+If you want to load questionnaires path to div, by js you should go to 
+questionnaires_path#js , and give your div .questionnaires_list
+
+
+in config/application.rb in your app , you should require 'haml' if it wasn't installed by dependencies

@@ -1,0 +1,6 @@
+%h1
+  Questionnaires#index
+- @questionnaires.each do |questionnaire|
+  %p
+    = link_to questionnaire.name, questionnaire_questions_path(questionnaire), remote: true
+

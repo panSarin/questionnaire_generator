@@ -1,0 +1,4 @@
+- question.question_options.each do |option|
+  %ul
+    = render :partial => "questionnaire_generator/question_options/option", :locals => { :option => option }
+
